@@ -22,25 +22,19 @@ jobs:
         
       - name: Install prerequisites
         run: |
-          sudo apt install cmake g++ libeigen3-dev fakeroot
+          sudo apt install cmake g++ libeigen3-dev dpkg-dev
           
       - name: Build & install DQRobotics (${{ matrix.testbranches }})
         run: |
           git clone -b ${{ matrix.testbranches }} https://github.com/dqrobotics/cpp
           cd cpp
-          chmod +x debian/rules
-          fakeroot debian/rules clean
-          fakeroot debian/rules build
-          fakeroot debian/rules binary
+          dpkg-buildpackage --sanitize-env -us -uc -B -rfakeroot
           cd ..
           sudo apt install ./*.deb
           
       - name: Build & install cpp-interface-json11
         run: |
-          chmod +x debian/rules
-          fakeroot debian/rules clean
-          fakeroot debian/rules build
-          fakeroot debian/rules binary
+          dpkg-buildpackage --sanitize-env -us -uc -B -rfakeroot
           cd ..
           sudo apt install ./*.deb
           
