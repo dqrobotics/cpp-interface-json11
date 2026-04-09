@@ -20,7 +20,6 @@ Contributors:
 - Murilo M. Marinho        (murilomarinho@ieee.org)
 */
 
-#include <cstdint> //Needed by json11.hpp
 #include <dqrobotics/interfaces/json11/DQ_JsonReader.h>
 #include <dqrobotics/utils/DQ_Math.h>
 
