@@ -14,4 +14,6 @@ RUN add-apt-repository ppa:dqrobotics-dev/development  \
   && apt-get install -y libdqrobotics
 
 COPY . /root/dqrobotics/cpp-interface-json11
-RUN cd /root/dqrobotics/cpp-interface-json11 && dpkg-buildpackage --sanitize-env -us -uc -B -rfakeroot
+RUN cd /root/dqrobotics/cpp-interface-json11  \
+    #&& chmod +x fix_json11.sh && . fix_json11.sh \
+    && dpkg-buildpackage --sanitize-env -us -uc -B -rfakeroot
