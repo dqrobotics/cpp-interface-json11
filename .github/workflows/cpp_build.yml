@@ -22,7 +22,7 @@ jobs:
         
       - name: Install prerequisites
         run: |
-          sudo apt install cmake g++ libeigen3-dev dpkg-dev
+          sudo apt install cmake g++ libeigen3-dev dpkg-dev build-essential
           
       - name: Build & install DQRobotics (${{ matrix.testbranches }})
         run: |
