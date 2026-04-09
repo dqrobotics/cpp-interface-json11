@@ -1,5 +1,5 @@
 /**
-(C) Copyright 2019-2023 DQ Robotics Developers
+(C) Copyright 2019-2026 DQ Robotics Developers
 
 This file is part of DQ Robotics.
 
@@ -20,6 +20,7 @@ Contributors:
 - Murilo M. Marinho        (murilomarinho@ieee.org)
 */
 
+#include <cstdint> //Needed by json11.hpp
 #include <dqrobotics/interfaces/json11/DQ_JsonReader.h>
 #include <dqrobotics/utils/DQ_Math.h>
 
@@ -29,7 +30,6 @@ Contributors:
 #include<fstream>
 #include<sstream>
 #include<string>
-#include<exception>
 #include<vector>
 
 namespace DQ_robotics
